@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            //1번
+            x = prompt('가로 크기를 입력하세요.');
+            y = prompt('세로 길이를 입력하세요.');
+            area = parseFloat(x) * parseFloat(y);
+            alert('사각형의 넓이는 ' + area.toFixed(1) + '입니다.');
+            //2번
+            coffee = prompt('커피한잔 가격을 입력하세요.');
+            count = prompt('커피구매 갯수를 입력하세요.');
+            money = parseInt(coffee) * parseInt(count);
+            alert('전체 결제금액은 ' + money + '원 입니다.');
+            //3번
+            //const PRICE_APPLE = 2000; 변경불가능한 값을 넣을 때, 상수
+            //const PRICE_PEAR = 3000;
+            (apple = 2000), (pear = 3000);
+            (apple_count = 3), (pear_count = 2);
+            sum = apple * apple_count + pear * pear_count;
+            alert('전체 결제금액은 ' + sum + '원 입니다.');
+            //4번
+            (yesterday_temp = 25), (today_temp = 10);
+            average = (yesterday_temp + today_temp) / 2;
+            alert('어제와 오늘의 평균 온도는 ' + average + '도 입니다.');
+        </script>
+    </head>
+    <body></body>
+</html>
