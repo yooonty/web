@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            function check_id() {
+                length = document.getElementById('id_value').value.length; //접근연산자
+                if (length < 5) {
+                    alert('글자수가 5개보다 적습니다!');
+                }
+            }
+
+            function check_pw() {
+                pw2 = document.getElementById('pw_value').value;
+                pw3 = document.getElementById('pw_value2').value;
+                result = document.getElementById('result');
+                if (pw2 == pw3) {
+                    //alert("로그인 성공!!!")
+                    //result안에 오른쪽에 있는 내용을 html코드로 안쪽에 집어넣어요!
+                    result.innerHTML =
+                        '<font color=red>일치!!</font> <img src="ok.jpg" width=100 height=100>';
+                } else {
+                    //alert("로그인 실패!!!")
+                    result.innerHTML =
+                        '<font color=blue>불일치!!!</font>  <img src="no.jpg" width=100 height=100>';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        아이디 : <input type="text" id="id_value" />
+        <button onclick="check_id()">글자수 체크</button>
+        <br />
+        패스워드 : <input type="text" id="pw_value" />
+        <br />
+        패스워드2 : <input type="text" id="pw_value2" />
+        <button onclick="check_pw()">패스워드 동일</button>
+        <br />
+        <hr color="black" />
+        <div id="result"></div>
+    </body>
+</html>
