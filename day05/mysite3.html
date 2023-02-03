@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="out.css" />
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"
+        ></script>
+        <script type="text/javascript">
+            $(function () {
+                $('button').click(function () {
+                    var IMP = window.IMP; // 생략가능
+                    IMP.init('iamport'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
+                    IMP.request_pay(
+                        {
+                            pg: 'inicis', // version 1.1.0부터 지원.
+                            pay_method: 'card',
+                            merchant_uid: 'merchant_' + new Date().getTime(),
+                            name: '주문명:결제테스트',
+                            amount: 14000,
+                            buyer_email: 'iamport@siot.do',
+                            buyer_name: '구매자이름',
+                            buyer_tel: '010-1234-5678',
+                            buyer_addr: '서울특별시 강남구 삼성동',
+                            buyer_postcode: '123-456',
+                            m_redirect_url:
+                                'www.yourdomain.com/payments/complete',
+                        },
+                        function (rsp) {
+                            if (rsp.success) {
+                                var msg = '결제가 완료되었습니다.';
+                                msg += '고유ID : ' + rsp.imp_uid;
+                                msg += '상점 거래ID : ' + rsp.merchant_uid;
+                                msg += '결제 금액 : ' + rsp.paid_amount;
+                                msg += '카드 승인번호 : ' + rsp.apply_num;
+                            } else {
+                                var msg = '결제에 실패하였습니다.';
+                                msg += '에러내용 : ' + rsp.error_msg;
+                            }
+                            alert(msg);
+                        }
+                    );
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="total">
+            <div id="top">
+                <h1><a href="mysite.html">쇼핑몰 사이트</a></h1>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="">회원가입</a>
+                        </li>
+                        <li>
+                            <a href="mysite3.html">제품정보</a>
+                        </li>
+                        <li>
+                            <a href="">게시판</a>
+                        </li>
+                        <li>
+                            <a href="">장바구니</a>
+                        </li>
+                        <li>
+                            <a href="mysite2.html">매장위치</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="center">
+                <table border="1">
+                    <tr>
+                        <td>1</td>
+                        <td>바지</td>
+                        <td>배기팬츠</td>
+                        <td>1000원</td>
+                        <td>
+                            <img
+                                src="1.jpg"
+                                alt=""
+                                style="width: 100px; height: 100px"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>마스크</td>
+                        <td>귀가 편한 마스크</td>
+                        <td>1000원</td>
+                        <td>
+                            <img
+                                src="2.jpg"
+                                alt=""
+                                style="width: 100px; height: 100px"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>신발</td>
+                        <td>발이 편한 신발</td>
+                        <td>1000원</td>
+                        <td>
+                            <img
+                                src="3.jpg"
+                                alt=""
+                                style="width: 100px; height: 100px"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" align="center">
+                            <button type="button">결제 하기</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

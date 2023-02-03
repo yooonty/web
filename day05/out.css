@@ -1,0 +1,48 @@
+body {
+    text-align: center;
+    background: lemonchiffon;
+}
+ul {
+    display: inline-block;
+    
+}
+li {
+    border: 1px solid black;
+    list-style: none;
+    float: left;
+    padding: 15px;
+    width: 100px;
+    height: 20px;
+    text-align: center;
+}
+a:hover {
+    background: powderblue;
+}
+li:nth-child(2n) {
+    background: beige;
+}
+li:nth-child(2n+1) {
+    background: ivory;
+}
+li:first-child {
+    border-radius: 50px 0px 0px 50px;
+}
+li:last-child {
+    border-radius: 0px 50px 50px 0px;
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+form {
+    /* display: flex;
+    justify-content: center; */
+    margin-top: 50px;
+}
+.login{
+    height:30px;
+}
+#center {
+    display: flex;
+    justify-content: center;
+}

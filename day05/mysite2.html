@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="out.css" />
+    </head>
+    <body>
+        <div id="total">
+            <div id="top">
+                <h1><a href="mysite.html">쇼핑몰 사이트</a></h1>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="">회원가입</a>
+                        </li>
+                        <li>
+                            <a href="mysite3.html">제품정보</a>
+                        </li>
+                        <li>
+                            <a href="">게시판</a>
+                        </li>
+                        <li>
+                            <a href="">장바구니</a>
+                        </li>
+                        <li>
+                            <a href="mysite2.html">매장위치</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <h3>매장 오시는 길</h3>
+            <div id="center">
+                <!-- 지도를 표시할 div 입니다 -->
+                <div id="map_cover">
+                    <div id="map" style="width: 500px; height: 250px"></div>
+                </div>
+                <script
+                    type="text/javascript"
+                    src="//dapi.kakao.com/v2/maps/sdk.js?appkey=*****************"
+                ></script>
+                <script>
+                    var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+                        mapOption = {
+                            center: new kakao.maps.LatLng(
+                                37.5049142,
+                                127.0049151
+                            ), // 지도의 중심좌표
+                            level: 4, // 지도의 확대 레벨
+                        };
+
+                    // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                    var map = new kakao.maps.Map(mapContainer, mapOption);
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
